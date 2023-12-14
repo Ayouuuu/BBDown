@@ -273,14 +273,14 @@ namespace BBDown
                 var key = m.Groups[1].Value;
                 var v = key switch 
                 {
-                    "videoTitle" => Program.GetValidFileName(title, filterSlash: true).Trim().TrimEnd('.').Trim(),
+                    "videoTitle" => BBDownUtil.GetValidFileName(title, filterSlash: true).Trim().TrimEnd('.').Trim(),
                     "pageNumber" => p.index.ToString(),
                     "pageNumberWithZero" => p.index.ToString().PadLeft(pagesCount.ToString().Length, '0'),
-                    "pageTitle" => Program.GetValidFileName(p.title, filterSlash: true).Trim().TrimEnd('.').Trim(),
+                    "pageTitle" => BBDownUtil.GetValidFileName(p.title, filterSlash: true).Trim().TrimEnd('.').Trim(),
                     "bvid" => p.bvid,
                     "aid" => p.aid,
                     "cid" => p.cid,
-                    "ownerName" => p.ownerName == null ? "" : Program.GetValidFileName(p.ownerName, filterSlash: true).Trim().TrimEnd('.').Trim(),
+                    "ownerName" => p.ownerName == null ? "" : BBDownUtil.GetValidFileName(p.ownerName, filterSlash: true).Trim().TrimEnd('.').Trim(),
                     "ownerMid" => p.ownerMid ?? "",
                     _ => $"<{key}>"
                 };
