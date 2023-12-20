@@ -182,6 +182,11 @@ namespace BBDown
             argsBuilder.Append(inputArg);
             argsBuilder.Append(metaArg);
             if (!simplyMux) {
+                if(title.Contains("."))
+                {
+                    string[] parts = inputString.Split('.');
+                    title = parts[1];
+                }
                 argsBuilder.Append($"-metadata title=\"{(episodeId == "" ? title : episodeId)}\" ");
                 if (lang != "") argsBuilder.Append($"-metadata:s:a:0 language={lang} ");
                 if (!string.IsNullOrWhiteSpace(desc)) argsBuilder.Append($"-metadata description=\"{desc}\" ");
