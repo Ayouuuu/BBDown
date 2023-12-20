@@ -184,7 +184,7 @@ namespace BBDown
             if (!simplyMux) {
                 if(title.Contains("."))
                 {
-                    string[] parts = inputString.Split('.');
+                    string[] parts = title.Split('.');
                     title = parts[1];
                 }
                 argsBuilder.Append($"-metadata title=\"{(episodeId == "" ? title : episodeId)}\" ");
