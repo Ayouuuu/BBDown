@@ -185,12 +185,12 @@ namespace BBDown
                 if(title.Contains("."))
                 {
                     string[] parts = title.Split('.');
-                    title = parts[1];
+                    title = parts[1].Trim();
                 }
                 if(episodeId.Contains("."))
                 {
                     string[] parts = episodeId.Split('.');
-                    episodeId = parts[1];
+                    episodeId = parts[1].Trim();
                 }
                 argsBuilder.Append($"-metadata title=\"{(episodeId == "" ? title : episodeId)}\" ");
                 if (lang != "") argsBuilder.Append($"-metadata:s:a:0 language={lang} ");
